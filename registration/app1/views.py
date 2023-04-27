@@ -1,0 +1,80 @@
+from django.shortcuts import render,HttpResponse,redirect
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
+# Create your views here.
+rating = {'a':4,'b':3,'c':2,'d':1}
+@login_required(login_url='login')
+def HomePage(request):
+    if request.method == "POST":
+        q1 = request.POST.get("question1")
+        q2 = request.POST.get("question2")
+        q3 = request.POST.get("question3")
+        q4 = request.POST.get("question4")
+        q5 = request.POST.get("question5")
+        q6 = request.POST.get("question6")
+        q7 = request.POST.get("question7")
+        q8 = request.POST.get("question8")
+        q9 = request.POST.get("question9")
+        q10 = request.POST.get("question10")
+        l = [q1,q2,q3,q4,q5,q6,q7,q8,q9,q10]
+        sum = 0 
+        for i in range(10):
+            sum+=rating[l[i]]
+        avg = sum/10
+        print(sum,avg)
+        if avg < 1.99:
+            score={'score':avg,'depression_level':"Severe depression"}
+            print("Severe depression")
+            return render(request, 'dep.html',score)
+        elif avg < 2.99:
+            print("Moderately severe depression")
+            score={'score':avg,'depression_level':"Moderately severe depression"}
+            return render(request, 'dep.html',score)
+        elif avg < 3.99:
+            print("Moderate depression")
+            score={'score':avg,'depression_level':"Moderate depression"}
+            return render(request, 'dep.html',score)
+        else:
+            print("You are not in depression")
+            score={'score':avg,'depression_level':"You are not in depression"}
+            return render(request, 'hap.html',score)
+        print("here")
+    return render (request,'home.html')
+
+def SignupPage(request):
+    if request.method=='POST':
+        uname=request.POST.get('username')
+        email=request.POST.get('email')
+        pass1=request.POST.get('password1')
+        pass2=request.POST.get('password2')
+
+        if pass1!=pass2:
+            return HttpResponse("Your password and confrom password are not Same!!")
+        else:
+
+            my_user=User.objects.create_user(uname,email,pass1)
+            my_user.save()
+            return redirect('login')
+        
+
+
+
+    return render (request,'signup.html')
+
+def LoginPage(request):
+    if request.method=='POST':
+        username=request.POST.get('username')
+        pass1=request.POST.get('pass')
+        user=authenticate(request,username=username,password=pass1)
+        if user is not None:
+            login(request,user)
+            return redirect('home')
+        else:
+            return HttpResponse ("Username or Password is incorrect!!!")
+
+    return render (request,'login.html')
+
+def LogoutPage(request):
+    logout(request)
+    return redirect('login')

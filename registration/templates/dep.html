@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Depression Support</title>
+	<style>
+		body {
+			background-color: #808080;
+			color: white;
+			font-family: Arial, sans-serif;
+		}
+		
+		h1 {
+			font-size: 36px;
+			text-align: center;
+			margin-top: 40px;
+		}
+		
+		#emoji {
+			font-size: 72px;
+			text-align: center;
+			margin-top: 40px;
+		}
+
+        #moj {
+			font-size: 42px;
+			text-align: center;
+			margin-top: 40px;
+		}
+
+        #oj {
+			font-size: 42px;
+			text-align: center;
+			margin-top: 40px;
+		}
+		
+		.quote {
+			font-size: 24px;
+			text-align: center;
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+		
+		#videos {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-bottom: 40px;
+		}
+		
+		.video {
+			margin-right: 20px;
+			margin-bottom: 20px;
+		}
+		
+		.video iframe {
+			width: 300px;
+			height: 200px;
+			border: none;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+	<h1>Depression Support</h1>
+	<div id="emoji">😔</div>
+    <div id="moj"><h5>Your score= {{score}}</h5></div>
+    <div id="oj"><h5>Your level= {{depression_level}}</h5></div>
+	<div class="quote">"The only way to do great work is to love what you do." - Steve Jobs</div>
+	<div id="videos">
+		<div class="video">
+			<iframe src="https://www.youtube.com/embed/UF8uR6Z6KLc"></iframe>
+		</div>
+		<div class="video">
+			<iframe src="https://www.youtube.com/embed/KtNhsGgEk54"></iframe>
+		</div>
+		<div class="video">
+			<iframe src="https://www.youtube.com/embed/eAK14VoY7C0"></iframe>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Happy Page</title>
+    <style>
+      body {
+        background-color: #FDEBD0;
+        color: #2980B9;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      
+      h1 {
+        font-size: 48px;
+        margin-top: 40px;
+      }
+
+      #moj {
+			font-size: 42px;
+			text-align: center;
+			margin-top: 40px;
+		}
+
+    #oj {
+        font-size: 42px;
+        text-align: center;
+        margin-top: 40px;
+    }
+      
+      p {
+        font-size: 24px;
+        margin-top: 30px;
+      }
+      
+      .emoji {
+        font-size: 72px;
+        margin-top: 40px;
+      }
+      
+      #video {
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+    <h1>You Are Loved</h1>
+    <div id="moj"><h5>Your score= {{score}}</h5></div>
+    <div id="oj"><h5>Your level= {{depression_level}}</h5></div>
+    <p>Life is beautiful, and you are an important part of it. Keep smiling and spreading joy.</p>
+    <div class="emoji">&#x1F600;</div>
+    <p>Here's a video to make you even happier:</p>
+    <iframe id="video" width="460" height="215" src="https://www.youtube.com/embed/n3mJ9b6l33E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </body>
+</html>

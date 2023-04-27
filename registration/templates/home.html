@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .form-container {
+      margin: auto;
+      width: 80%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    }
+    .form-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .form-group input[type="radio"] {
+      margin-right: 10px;
+    }
+    .submit-btn {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+  </head>
+  <body>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+    <div id="mcq-container">
+    <div class="form-container">
+      <h1>MCQ Form</h1>
+      <form method="POST">
+        {% csrf_token %} 
+        <div class="form-group">
+          <label>Question 1: Little interest or pleasure in doing things?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question1" id="question1-a" value="a" required>
+            <label class="form-check-label" for="question1-a">Not at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question1" id="question1-b" value="b" required>
+            <label class="form-check-label" for="question1-b">Several days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question1" id="question1-c" value="c" required>
+            <label class="form-check-label" for="question1-c">More than half of the days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question1" id="question1-d" value="d" required>
+            <label class="form-check-label" for="question1-d">Nearly every day</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Question 2: Feeling down, depressed, or hopeless?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question2" id="question2-a" value="a" required>
+            <label class="form-check-label" for="question2-a">Not at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question2" id="question2-b" value="b" required>
+            <label class="form-check-label" for="question2-b">Several days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question2" id="question2-c" value="c" required>
+            <label class="form-check-label" for="question2-c">More than half of the days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question2" id="question2-d" value="d" required>
+            <label class="form-check-label" for="question2-d">Nearly every day</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Question 3: Trouble falling or staying asleep, or sleeping too much?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question3" id="question3-a" value="a" required>
+            <label class="form-check-label" for="question3-a">Not at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question3" id="question3-b" value="b" required>
+            <label class="form-check-label" for="question3-b">Several days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question3" id="question3-c" value="c" required>
+            <label class="form-check-label" for="question3-c">More than half of the days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question3" id="question3-d" value="d" required>
+            <label class="form-check-label" for="question3-d">Nearly every day</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Question 4: Feeling tired or having little energy?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question4" id="question4-a" value="a" required>
+            <label class="form-check-label" for="question4-a">Not at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question4" id="question4-b" value="b" required>
+            <label class="form-check-label" for="question4-b">Several days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question4" id="question4-c" value="c" required>
+            <label class="form-check-label" for="question4-c">More than half of the days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question4" id="question4-d" value="d" required>
+            <label class="form-check-label" for="question4-d">Nearly every day</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Question 5: Poor appetite or overeating?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question5" id="question5-a" value="a" required>
+            <label class="form-check-label" for="question5-a">Not at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question5" id="question5-b" value="b" required>
+            <label class="form-check-label" for="question5-b">Several days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question5" id="question5-c" value="c" required>
+            <label class="form-check-label" for="question5-c">More than half of the days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question5" id="question5-d" value="d" required>
+            <label class="form-check-label" for="question5-d">Nearly every day</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Question 6: Feeling bad about yourself - or that you are a failure or have let yourself or your family down?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question6" id="question6-a" value="a" required>
+            <label class="form-check-label" for="question6-a">Not at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question6" id="question6-b" value="b" required>
+            <label class="form-check-label" for="question6-b">Several days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question6" id="question6-c" value="c" required>
+            <label class="form-check-label" for="question6-c">More than half of the days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question6" id="question6-d" value="d" required>
+            <label class="form-check-label" for="question6-d">Nearly every day</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Question 7: Trouble concentrating on things, such as reading the newspaper or watching television?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question7" id="question7-a" value="a" required>
+            <label class="form-check-label" for="question7-a">Not at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question7" id="question7-b" value="b" required>
+            <label class="form-check-label" for="question7-b">Several days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question7" id="question7-c" value="c" required>
+            <label class="form-check-label" for="question7-c">More than half of the days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question7" id="question7-d" value="d" required>
+            <label class="form-check-label" for="question7-d">Nearly every day</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Question 8: Moving or speaking so slowly that other people could have noticed?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question8" id="question8-a" value="a" required>
+            <label class="form-check-label" for="question8-a">Not at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question8" id="question8-b" value="b" required>
+            <label class="form-check-label" for="question8-b">Several days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question8" id="question8-c" value="c" required>
+            <label class="form-check-label" for="question1-c">More than half of the days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question8" id="question8-d" value="d" required>
+            <label class="form-check-label" for="question8-d">Nearly every day</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Question 9: Thoughts that you would be better off dead, or of hurting yourself?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question9" id="question9-a" value="a" required>
+            <label class="form-check-label" for="question9-a">Not at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question9" id="question9-b" value="b" required>
+            <label class="form-check-label" for="question9-b">Several days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question9" id="question9-c" value="c" required>
+            <label class="form-check-label" for="question1-c">More than half of the days</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question9" id="question9-d" value="d" required>
+            <label class="form-check-label" for="question9-d">Nearly every day</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Question 10: If you've had any days with issues above, how difficult have these problems made it for you at work, home, school, or with other people??</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question10" id="question10-a" value="a" required>
+            <label class="form-check-label" for="question10-a">Not difficult at all</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question10" id="question10-b" value="b" required>
+            <label class="form-check-label" for="question10-b">Somewhat difficult</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question10" id="question10-c" value="c" required>
+            <label class="form-check-label" for="question10-c">Very difficult</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="question10" id="question10-d" value="d" required>
+            <label class="form-check-label" for="question10-d">Extremely difficult</label>
+          </div>
+        </div>
+        <button id="submit-btn">Submit</button>
+      </div>
+      </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script>const submitBtn = document.getElementById('submit-btn');
+
+      // Add event listener to submit button
+      submitBtn.addEventListener('click', () => {
+        // Get selected option for question 1
+        const question1Options = document.getElementsByName('question1');
+        let question1SelectedOption = '';
+        for (let i = 0; i < question1Options.length; i++) {
+          if (question1Options[i].checked) {
+            question1SelectedOption = question1Options[i].value;
+            break;
+          }
+        }
+        
+        // Get selected option for question 2
+        const question2Options = document.getElementsByName('question2');
+        let question2SelectedOption = '';
+        for (let i = 0; i < question2Options.length; i++) {
+          if (question2Options[i].checked) {
+            question2SelectedOption = question2Options[i].value;
+            break;
+          }
+        }
+        
+        // Log selected options
+        console.log('Question 1 selected option:', question1SelectedOption);
+        console.log('Question 2 selected option:', question2SelectedOption);
+      });
+      </script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
